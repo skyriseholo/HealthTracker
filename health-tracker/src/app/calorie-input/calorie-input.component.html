@@ -1,0 +1,7 @@
+<form clrForm>
+  <clr-input-container>
+    <label>Daily Calorie Goal</label>
+    <input clrInput placeholder="e.g. 2000" name="calories" [(ngModel)]="calories" />
+  </clr-input-container>
+</form>
+<button class="btn btn-primary" (click)="updateCalories()">Update Calories</button>

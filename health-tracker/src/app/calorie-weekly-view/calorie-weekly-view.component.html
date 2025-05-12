@@ -1,0 +1,8 @@
+<div class="main-container">
+  <div class="content-container">
+    <div class="content-area">
+      <app-calorie-input (caloriesEvent)="updateCalories($event)"></app-calorie-input>
+      <app-week-view [calorieBudget]="calorieBudget"></app-week-view>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">{{ dayLabel }} - {{ calorieBudget }} Calories</div>
+  <div class="card-block">
+    <div class="card-title">Calories Remaining: {{ caloriesRemaining }}</div>
+    <div class="card-text">
+      Calories Consumed: {{ caloriesConsumed }}
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-sm btn-link" (click)="update()">Update Calories Consumed</button>
+    <input clrInput placeholder="e.g. 1500" name="calories" [(ngModel)]="caloriesConsumedInput" />
+  </div>
+</div>
