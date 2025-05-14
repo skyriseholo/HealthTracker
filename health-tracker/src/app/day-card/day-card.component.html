@@ -7,7 +7,13 @@
     </div>
   </div>
   <div class="card-footer">
-    <button class="btn btn-sm btn-link" (click)="update()">Update Calories Consumed</button>
-    <input clrInput placeholder="e.g. 1500" name="calories" [(ngModel)]="caloriesConsumedInput" />
+    <div class="clr-row clr-align-items-start"> 
+      <div class="clr-align-self-center clr-col-4">
+        <button class="btn btn-primary" (click)="update()">Update</button>
+      </div>
+      <div class="clr-align-self-start clr-col-8">
+        <input clrInput placeholder="e.g. 1500" name="calories" [(ngModel)]="caloriesConsumedInput" />
+      </div>
+    </div>
   </div>
 </div>

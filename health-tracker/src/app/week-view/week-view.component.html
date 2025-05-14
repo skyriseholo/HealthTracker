@@ -1,5 +1,5 @@
 <div class="clr-row">
-  <div class="clr-col-4" *ngFor="let day of days;">
+  <div class="clr-col-sm-12 clr-col-md-4 clr-col-lg-3" *ngFor="let day of days;">
     <app-day-card [dayLabel]="day" [calorieBudget]="calorieBudget" (caloriesConsumedEvent)="update($event)"></app-day-card>
   </div>
 </div>
