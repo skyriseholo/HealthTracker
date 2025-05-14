@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ClarityModule } from '@clr/angular';
 import { DayCardComponent } from '../day-card/day-card.component';
 import { NgFor } from '@angular/common';
@@ -14,14 +14,12 @@ export class WeekViewComponent {
   days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
   caloriesConsumed: { [key: string]: number } = {};
 
-  totalCaloriesConsumed = 0;
-  @Input() calorieBudget = 2000;
-  totalCaloriesRemaining = 0;
+  @Output() totalCaloriesConsumedEvent = new EventEmitter<number>();
+  @Input() calorieBudget = 0;
 
   update(caloriesConsumedEvent: any) {
     this.caloriesConsumed[caloriesConsumedEvent.day] = parseInt(caloriesConsumedEvent.calories);
     this.calculateTotalCaloriesConsumed();
-    this.calculateTotalCaloriesRemaining();
   }
 
   calculateTotalCaloriesConsumed() {
@@ -30,10 +28,6 @@ export class WeekViewComponent {
       totalCalsConsumed += this.caloriesConsumed[key]
     }
 
-    this.totalCaloriesConsumed = totalCalsConsumed
-  }
-
-  calculateTotalCaloriesRemaining() {
-    this.totalCaloriesRemaining = this.calorieBudget * 7 - this.totalCaloriesConsumed
+    this.totalCaloriesConsumedEvent.emit(totalCalsConsumed);
   }
 }

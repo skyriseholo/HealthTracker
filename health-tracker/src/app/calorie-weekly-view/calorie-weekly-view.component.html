@@ -2,7 +2,9 @@
   <div class="content-container">
     <div class="content-area">
       <app-calorie-input (caloriesEvent)="updateCalories($event)"></app-calorie-input>
-      <app-week-view [calorieBudget]="calorieBudget"></app-week-view>
+      <h3>Calories Remaining: <strong>{{totalCaloriesRemaining}}</strong></h3>
+      <h3>Total Calories Consumed: <strong>{{totalCaloriesConsumed}}</strong></h3>
+      <app-week-view [calorieBudget]="calorieBudget" (totalCaloriesConsumedEvent)="updateTotalCaloriesConsumed($event)"></app-week-view>
     </div>
   </div>
 </div>

@@ -1,6 +1,3 @@
-<h3>Calories Remaining: <strong>{{totalCaloriesRemaining}}</strong></h3>
-<h3>Total Calories Consumed: <strong>{{totalCaloriesConsumed}}</strong></h3>
-
 <div class="clr-row">
   <div class="clr-col-4" *ngFor="let day of days;">
     <app-day-card [dayLabel]="day" [calorieBudget]="calorieBudget" (caloriesConsumedEvent)="update($event)"></app-day-card>

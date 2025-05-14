@@ -10,7 +10,23 @@ import { WeekViewComponent } from '../week-view/week-view.component';
 })
 export class CalorieWeeklyViewComponent {
   calorieBudget = 0
+  weeklyCalorieBudget = 0;
+
+  totalCaloriesConsumed = 0;
+  totalCaloriesRemaining = 0;
+
   updateCalories(calories: number) {
     this.calorieBudget = calories;
+    this.weeklyCalorieBudget = this.calorieBudget * 7;
+    this.calculateTotalCaloriesRemaining();
+  }
+
+  updateTotalCaloriesConsumed(totalCalories: number) {
+    this.totalCaloriesConsumed = totalCalories;
+    this.calculateTotalCaloriesRemaining();
+  }
+
+  calculateTotalCaloriesRemaining() {
+    this.totalCaloriesRemaining = this.weeklyCalorieBudget - this.totalCaloriesConsumed;
   }
 }
